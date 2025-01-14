@@ -1,0 +1,88 @@
+.about-me {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: var(--terciary-color);
+    color: var(--secondary-color);
+    padding: 0 6rem;
+}
+
+.about-me .container-about {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+}
+
+.about-me .container-about img:hover {
+    scale: 1.1;
+    transition: .5s;
+}
+
+.my-name {
+    font-size: 1.5rem;
+    padding-bottom: 1.1rem;
+}
+
+.my-name-content {
+    color: var(--primary-color);
+}
+
+.container-my-info h2 {
+    font-size: 2rem;
+    font-weight: 400;
+    width: 34vw;
+    padding-bottom: 1.1rem;
+}
+
+.container-my-info .my-description {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--quaternary-color);
+    width: 40vw;
+    padding-bottom: 2.5rem;
+}
+
+.content-details {
+    font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.content-details-line {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.content-details-line:last-child {
+    padding-bottom: 4rem;
+}
+
+.content-details-key {
+    display: flex;
+    width: 8vw;
+    font-weight: 600;
+}
+
+.content-details-value {
+    display: flex;
+    padding-left: 2rem;
+    color: var(--quaternary-color);
+}
+
+.button-cv {
+    width: 8.4vw;
+    height: 6.2vh;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.button-cv:hover {
+    scale: 1.1;
+    transition: .5s;
+}

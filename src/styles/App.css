@@ -3,9 +3,15 @@
 :root {
   --primary-color: #FEDC00;
   --secondary-color: #FFFFFF;
+  --terciary-color: #000000;
+  --quaternary-color: #808080;
 }
 
 .app {
   width: 100%;
   font-family: 'Ubuntu';
+}
+
+html {
+  scroll-behavior: smooth;
 }

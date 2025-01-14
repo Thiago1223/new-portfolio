@@ -128,6 +128,25 @@
 }
 
 .home .content .content-social-media li:hover {
-    scale: 1.2;
-    transition: .8s;
+  scale: 1.2;
+  transition: .8s;
+}
+
+.bouncing-icon {
+  display: inline-block;
+  animation: bounce 1.5s infinite ease-in-out;
+}
+
+.bouncing-icon:hover {
+  scale: 1.2;
+  transition: .8s;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
