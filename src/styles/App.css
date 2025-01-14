@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+:root {
+  --primary-color: #FEDC00;
+  --secondary-color: #FFFFFF;
+}
+
+.app {
+  width: 100%;
+  font-family: 'Ubuntu';
+}
