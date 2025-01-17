@@ -3,6 +3,7 @@ import './styles/Reset.css';
 import './styles/App.css';
 import './styles/Home.css';
 import './styles/AboutMe.css';
+import './styles/Skills.css';
 import facebookIcon from './assets/icon-facebook.svg';
 import githubIcon from './assets/icon-github.svg';
 import instagramIcon from './assets/icon-instagram.svg';
@@ -12,22 +13,51 @@ import MyImage from './assets/my-image.png';
 import MyCv from './assets/curriculo-thiago.pdf';
 
 function App() {
-
-  const [role, setRole] = useState('Dev Front-End'); 
+  const [roleIndex, setRoleIndex] = useState(0);
+  const [displayedText, setDisplayedText] = useState('');
+  const [isDeleting, setIsDeleting] = useState(false);
 
   useEffect(() => {
     const roles = ['Dev Front-End', 'Dev Back-End', 'Web Designer'];
-    let index = 0;
-    
-    const changeRole = () => {
-      setRole(roles[index]);
-      index = (index + 1) % roles.length;
+    const fullText = roles[roleIndex];
+
+    const handleTyping = () => {
+      if (isDeleting) {
+        setDisplayedText((prev) => fullText.substring(0, prev.length - 1));
+        if (displayedText === '') {
+          setIsDeleting(false);
+          setRoleIndex((prevIndex) => (prevIndex + 1) % roles.length);
+        }
+      } else {
+        setDisplayedText((prev) => fullText.substring(0, prev.length + 1));
+        if (displayedText === fullText) {
+          setTimeout(() => setIsDeleting(true), 1000);
+        }
+      }
     };
 
-    const interval = setInterval(changeRole, 3000);
+    const typingSpeed = isDeleting ? 50 : 150;
+    const typingInterval = setTimeout(handleTyping, typingSpeed);
 
-    return () => clearInterval(interval);
-  }, []);
+    return () => clearTimeout(typingInterval);
+  }, [displayedText, isDeleting, roleIndex]);
+
+  const [showAllSkills, setShowAllSkills] = useState(false);
+
+  const skills = [
+      { name: 'JavaScript', value: 80 },
+      { name: 'NodeJs', value: 80 },
+      { name: 'Java', value: 70 },
+      { name: 'Kotlin', value: 70 },
+      { name: 'React', value: 60 },
+      { name: 'MySql', value: 60 },
+      { name: 'Python', value: 60 },
+      { name: 'Figma', value: 90 },
+      { name: 'HTML', value: 80 },
+      { name: 'CSS', value: 80 }
+  ];
+
+  const visibleSkills = showAllSkills ? skills : skills.slice(0, 6);
 
   return (
     <div className="app">
@@ -36,24 +66,16 @@ function App() {
           <div className='logo'>thiagofreitas</div>
           <nav className='navigation'>
             <ul>
-              <li>
-                <a href="#home">Home</a>
-              </li>
-              <li>
-                <a href="#about-me">Sobre mim</a>
-              </li>
-              <li>
-                <a href="#home">Portfólio</a>
-              </li>
-              <li>
-                <a href="#home">Contato</a>
-              </li>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about-me">Sobre mim</a></li>
+              <li><a href="#home">Portfólio</a></li>
+              <li><a href="#home">Contato</a></li>
             </ul>
           </nav>
         </header>
         <div className='content'>
           <span className='content-welcome'>Bem-Vindo! </span>
-          <h1>Eu sou <span className='highlight'>{role}</span></h1>
+          <h1>Eu sou <span className='highlight'>{displayedText}<span className='cursor'>|</span></span></h1>
           <ul className='content-work'>
             <li>Back-End</li> 
             <li>Front-End</li>
@@ -126,8 +148,25 @@ function App() {
           </div>
         </div>
       </section>
+      <section className='skills'>
+        <div className='container-title'>
+          <h3>Minhas <span className='container-title-skills'>Habilidades</span></h3>
+          <span className='container-title-subtitle'>Aqui estão minhas habilidades em destaque:</span>
+        </div>
+        <div className='container-skills'>
+        {visibleSkills.map((skill, index) => (
+          <div key={index} className='container-skills-individual'>
+              <span>{skill.name}</span>
+              <progress value={skill.value} max='100'></progress>
+          </div>
+        ))}
+        </div>
+        <button className='button-see-more' onClick={() => setShowAllSkills(!showAllSkills)}>Ver mais</button>
+      </section>
+      <section className='projects'></section>
     </div>
   );
 }
+
 
 export default App;

@@ -1,0 +1,80 @@
+.skills {
+    width: 100%;
+    min-height: 70vh;
+    background-color: rgba(128, 128, 128, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem;
+}
+
+.container-title {
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .8rem;
+}
+
+.container-title h3 {
+    font-size: 2.5rem;
+}
+
+.container-title-skills {
+    color: var(--primary-color);
+}
+
+.container-title-subtitle {
+    font-size: 1.2rem;
+    color: var(--quaternary-color);
+}
+
+.container-skills {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 6rem;
+    row-gap: 3rem;
+    padding: 4rem;
+}
+
+.container-skills-individual {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    gap: .6rem;
+    color: var(--quaternary-color);
+}
+
+.container-skills-individual progress {
+    width: 40vw;
+    height: .6rem;
+    border-radius: 0;
+}
+
+progress::-webkit-progress-bar {
+    background-color: rgba(128, 128, 128, 0.2);
+}
+
+progress::-webkit-progress-value {
+    background-color: var(--secondary-color);
+}
+
+.button-see-more {
+    width: 8vw;
+    height: 3vw;
+    background: none;
+    border: var(--secondary-color) solid 2px;
+    border-radius: 8px;
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.button-see-more:hover {
+    color: var(--terciary-color);
+    background: var(--secondary-color);
+    transition: .5s;
+}

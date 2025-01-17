@@ -12,19 +12,19 @@
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .logo::before {
   content: "< ";
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
 }
 
 .logo::after {
   content: " />";
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
   color: var(--primary-color);
 }
@@ -37,7 +37,7 @@
 }
 
 .navigation {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 .navigation ul {
@@ -64,6 +64,10 @@
 .home .content h1 {
   font-weight: normal;
   font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
 }
 
 .home .content h1 .highlight {
@@ -76,33 +80,15 @@
   position: relative;
   font-weight: bold;
   font-size: 2rem;
-  animation: slideText 4s ease-in-out infinite;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: blink 0.7s steps(1) infinite;
 }
 
-@keyframes slideText {
-  0% {
-    transform: translateX(100%);
-    opacity: 0;
+@keyframes blink {
+  50% {
+    border-color: transparent;
   }
-  33% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  66% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-}
-
-.highlight {
-  animation-name: slideText;
-  animation-duration: 6s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
 }
 
 .home .content .content-work {
