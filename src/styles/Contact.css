@@ -121,7 +121,8 @@ footer {
     right: 32px;
     bottom: 32px;
     display: inline-block;
-    animation: bounce 1.5s infinite ease-in-out;
+    animation: bounce-icon-up 1.5s infinite ease-in-out;
+    transform: rotate(180deg);
 }
 
 .icon-up:hover {
@@ -129,7 +130,7 @@ footer {
     transition: 0.8s;
 }
 
-@keyframes bounce {
+@keyframes bounce-icon-up {
     0%, 100% {
       transform: translateY(0) rotate(180deg);
     }
