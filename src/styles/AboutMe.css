@@ -5,6 +5,22 @@
     height: 90vh;
     color: var(--secondary-color);
     padding: 0 6rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.about-me.animate {
+    opacity: 1;
+    animation: slide-in 2s both;
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateX(-1000px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }
 
 .about-me .container-about {
