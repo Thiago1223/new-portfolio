@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import ContactForm from './components/ContactForm';
 import './styles/Reset.css';
 import './styles/App.css';
 import './styles/Home.css';
@@ -20,6 +21,7 @@ import FirstProject from './assets/first-project.png';
 import LeftUpDecoration from './assets/left-up-decoration.png';
 import RightUpDecoration from './assets/right-up-decoration.png';
 import RightDownDecoration from './assets/right-down-decoration.png';
+import Card from './components/Card';
 
 function App() {
   const [roleIndex, setRoleIndex] = useState(0);
@@ -27,8 +29,10 @@ function App() {
   const [isDeleting, setIsDeleting] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("Todos");
   const [showAllSkills, setShowAllSkills] = useState(false);
-  const [isVisible, setIsVisible] = useState(false);
-  const filters = ["Todos", "Mobile", "React"];
+  const [isAboutMeVisible, setIsAboutMeVisible] = useState(false);
+  const [isSkillsVisible, setIsSkillsVisible] = useState(false);
+  const [showAll, setShowAll] = useState(false);
+  const filters = ["Todos", "Mobile", "React", "Vanilla"];
   const skills = [
     { name: 'JavaScript', value: 80 },
     { name: 'NodeJs', value: 80 },
@@ -40,6 +44,57 @@ function App() {
     { name: 'Figma', value: 90 },
     { name: 'HTML', value: 80 },
     { name: 'CSS', value: 80 }
+  ];
+  const projects = [
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "React"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "Mobile"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "Vanilla"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "Vanilla"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "React"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "React"
+    },
+    {
+      image: FirstProject,
+      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
+      siteLink: "#",
+      githubLink: "#",
+      category: "React"
+    }
   ];
 
   useEffect(() => {
@@ -71,22 +126,34 @@ function App() {
 
   useEffect(() => {
     const aboutMeSection = document.querySelector('.about-me');
-
+    const skillsSection = document.querySelector('.container-skills');
+  
     const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      }
+      entries.forEach((entry) => {
+        if (entry.target === aboutMeSection && entry.isIntersecting && !isAboutMeVisible) {
+          setIsAboutMeVisible(true);
+        }
+        if (entry.target === skillsSection && entry.isIntersecting && !isSkillsVisible) {
+          setIsSkillsVisible(true);
+        }
+      });
     }, {
       threshold: 0.1
     });
-
-    observer.observe(aboutMeSection);
-
+  
+    if (aboutMeSection) observer.observe(aboutMeSection);
+    if (skillsSection) observer.observe(skillsSection);
+  
     return () => {
       observer.disconnect();
     };
-  }, []);
+  }, [isAboutMeVisible, isSkillsVisible]);
+
+  const filteredProjects = selectedCategory === "Todos" ? projects : projects.filter((project) => project.category === selectedCategory);
+
+  const toggleShowAll = () => {
+    setShowAll(!showAll);
+  };
 
   return (
     <div className="app">
@@ -137,7 +204,7 @@ function App() {
           <img src={ArrowIcon} alt="Arrow down" />
         </a>
       </section>
-      <section className={`about-me ${isVisible ? 'animate' : ''}`} id='about-me'>
+      <section className={`about-me ${isAboutMeVisible ? 'animate-slide-in' : ''}`} id='about-me'>
         <div className='container-about'>
           <img src={MyImage} alt="Foto de Perfil" />
           <div className='container-my-info'>
@@ -182,7 +249,7 @@ function App() {
           <h3>Minhas <span className='container-title-default'>Habilidades</span></h3>
           <span className='container-title-subtitle'>Aqui estão minhas habilidades em destaque:</span>
         </div>
-        <div className='container-skills'>
+        <div className={`container-skills ${isSkillsVisible ? 'animate-fade-in' : ''}`}>
         {visibleSkills.map((skill, index) => (
           <div key={index} className='container-skills-individual'>
               <span>{skill.name}</span>
@@ -207,48 +274,11 @@ function App() {
           </div>
         </div>
         <div className='container-card'>
-          <div className='card'>
-            <div className='container-start'>
-              <img src={FirstProject} alt="Primeiro Projeto" />
-              <p>Este é um projeto realizado com o intuíto, de práticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo senai.</p>
-            </div>
-            <div className='container-button'>
-              <button>Ver site</button>
-              <button>GitHub</button>
-            </div>
-          </div>
-          <div className='card'>
-            <div className='container-start'>
-              <img src={FirstProject} alt="Primeiro Projeto" />
-              <p>Este é um projeto realizado com o intuíto, de práticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo senai.</p>
-            </div>
-            <div className='container-button'>
-              <button>Ver site</button>
-              <button>GitHub</button>
-            </div>
-          </div>
-          <div className='card'>
-            <div className='container-start'>
-              <img src={FirstProject} alt="Primeiro Projeto" />
-              <p>Este é um projeto realizado com o intuíto, de práticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo senai.</p>
-            </div>
-            <div className='container-button'>
-              <button>Ver site</button>
-              <button>GitHub</button>
-            </div>
-          </div>
-          <div className='card'>
-            <div className='container-start'>
-              <img src={FirstProject} alt="Primeiro Projeto" />
-              <p>Este é um projeto realizado com o intuíto, de práticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo senai.</p>
-            </div>
-            <div className='container-button'>
-              <button>Ver site</button>
-              <button>GitHub</button>
-            </div>
-          </div>
+          {(showAll ? filteredProjects : filteredProjects.slice(0, 4)).map((project) => (
+              <Card image={project.image} description={project.description} siteLink={project.siteLink} githubLink={project.githubLink} />
+          ))}
         </div>
-        <button className='button-see-more'>Ver mais</button>
+        <button className='button-see-more' onClick={toggleShowAll}>{showAll ? "Ver menos" : "Ver mais"}</button>
       </section>
       <section className='contact' id='contact'>
         <div className='container-title'>
@@ -273,23 +303,13 @@ function App() {
               <span className='card-subtitle'>11 93088-7360</span>
             </li>
           </ul>
-          <div className='container-contact-input'>
-            <div className='container-contact-input-initial'>
-              <input type="text" placeholder='Primeiro Nome *' id='input-name' />
-              <input type="text" placeholder='Sobrenome *' id='input-last-name' />
-              <input type="email" placeholder='Email *' id='input-email' />
-              <input type="ph" placeholder='Telefone *' id='input-phone' />
-            </div>
-            <input type="text" placeholder='Assunto *' className='first-contact-input' id='input-subject' />
-            <textarea class="second-contact-input" placeholder="Descrição *" id='input-description'></textarea>
-            <button>Enviar</button>
-          </div>
+          <ContactForm />
         </div>
         <a href="#home" className='icon-up'>
           <img src={ArrowIcon} alt="Arrow Up" />
         </a>
       </section>
-      <footer>Todos os direitos reservados 2024 | Desenvolvido por Thiago Freitas</footer>
+      <footer>Todos os direitos reservados 2025 | Desenvolvido por Thiago Freitas</footer>
     </div>
   );
 }

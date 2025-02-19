@@ -38,6 +38,22 @@
     column-gap: 6rem;
     row-gap: 3rem;
     padding: 4rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.container-skills.animate-fade-in {
+    opacity: 1;
+    animation: fade-in 2s ease-in-out both;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .container-skills-individual {

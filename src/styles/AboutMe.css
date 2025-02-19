@@ -9,7 +9,7 @@
     transition: opacity 1s ease-in-out;
 }
 
-.about-me.animate {
+.about-me.animate-slide-in {
     opacity: 1;
     animation: slide-in 2s both;
 }
