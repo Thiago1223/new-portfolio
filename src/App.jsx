@@ -31,6 +31,7 @@ function App() {
   const [showAllSkills, setShowAllSkills] = useState(false);
   const [isAboutMeVisible, setIsAboutMeVisible] = useState(false);
   const [isSkillsVisible, setIsSkillsVisible] = useState(false);
+  const [isProjectsVisible, setIsProjectsVisible] = useState(false);
   const [showAll, setShowAll] = useState(false);
   const filters = ["Todos", "Mobile", "React", "Vanilla"];
   const skills = [
@@ -127,6 +128,7 @@ function App() {
   useEffect(() => {
     const aboutMeSection = document.querySelector('.about-me');
     const skillsSection = document.querySelector('.container-skills');
+    const projectsSection = document.querySelector('.projects');
   
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -136,6 +138,9 @@ function App() {
         if (entry.target === skillsSection && entry.isIntersecting && !isSkillsVisible) {
           setIsSkillsVisible(true);
         }
+        if (entry.target === projectsSection && entry.isIntersecting && !isProjectsVisible) {
+          setIsProjectsVisible(true);
+        }
       });
     }, {
       threshold: 0.1
@@ -143,11 +148,12 @@ function App() {
   
     if (aboutMeSection) observer.observe(aboutMeSection);
     if (skillsSection) observer.observe(skillsSection);
+    if (projectsSection) observer.observe(projectsSection);
   
     return () => {
       observer.disconnect();
     };
-  }, [isAboutMeVisible, isSkillsVisible]);
+  }, [isAboutMeVisible, isSkillsVisible, isProjectsVisible]);
 
   const filteredProjects = selectedCategory === "Todos" ? projects : projects.filter((project) => project.category === selectedCategory);
 
@@ -259,7 +265,7 @@ function App() {
         </div>
         <button className='button-see-more' onClick={() => setShowAllSkills(!showAllSkills)}>{!showAllSkills ? 'Ver mais' : 'Ver menos'}</button>
       </section>
-      <section className='projects' id='projects'>
+      <section className={`projects ${isProjectsVisible ? 'animate-slide-in-projects' : ''}`} id='projects'>
         <img src={LeftUpDecoration} alt="Detalhe Esquerdo Emcima" className='left-up-decoration' />
         <img src={RightUpDecoration} alt="Detalhe Direito Emcima" className='right-up-decoration' />
         <img src={RightDownDecoration} alt="Detalhe Direito Embaixo" className='right-down-decoration' />

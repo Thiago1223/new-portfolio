@@ -6,6 +6,24 @@
     justify-content: space-between;
     position: relative;
     padding: 4rem;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.projects.animate-slide-in-projects {
+    opacity: 1;
+    animation: slide-fade-in-projects 2s both;
+}
+
+@keyframes slide-fade-in-projects {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 .container-initial {
