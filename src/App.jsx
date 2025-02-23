@@ -18,6 +18,20 @@ import PhoneIcon from './assets/icon-phone.svg';
 import MyImage from './assets/my-image.png';
 import MyCv from './assets/curriculo-thiago.pdf';
 import FirstProject from './assets/first-project.png';
+import SecondProject from './assets/second-project.png';
+import ThirdProject from './assets/third-project.png';
+import FourthProject from './assets/fourth-project.png';
+import FifthProject from './assets/fifth-project.png';
+import SixthProject from './assets/sixth-project.png';
+import SeventhProject from './assets/seventh-project.png';
+import EighthProject from './assets/eighth-project.png';
+import NinthProject from './assets/ninth-project.png';
+import TenthProject from './assets/tenth-project.png';
+import EleventhProject from './assets/eleventh-project.png';
+import TwelfthProject from './assets/twelfth-project.png';
+import ThirteenthProject from './assets/thirteenth-project.png';
+import FourteenthProject from './assets/fourteenth-project.png';
+import FifteenthProject from './assets/fifteenth-project.png';
 import LeftUpDecoration from './assets/left-up-decoration.png';
 import RightUpDecoration from './assets/right-up-decoration.png';
 import RightDownDecoration from './assets/right-down-decoration.png';
@@ -49,51 +63,107 @@ function App() {
   const projects = [
     {
       image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
-      category: "React"
+      description: "Esta landing page foi criada para explorar minhas habilidades em front-end, aplicando conceitos de design e usabilidade. O projeto apresenta o jogo Valorant, destacando personagens, mapas e modos de jogo, utilizando HTML e CSS para uma interface atraente e responsiva.",
+      siteLink: "https://thiago1223.github.io/projeto-valorant/",
+      githubLink: "https://github.com/Thiago1223/projeto-valorant",
+      category: "Vanilla"
     },
     {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
+      image: SecondProject,
+      description: "Esta landing page foi criada para explorar minhas habilidades em front-end, aplicando conceitos de design e usabilidade. O projeto apresenta o jogo Apex Legends, destacando personagens, mapas e modos de jogo, utilizando HTML e CSS para uma interface atraente e responsiva.",
+      siteLink: "https://thiago1223.github.io/projeto-apex/",
+      githubLink: "https://github.com/Thiago1223/projeto-apex",
+      category: "Vanilla"
+    },
+    {
+      image: ThirdProject,
+      description: "Este projeto, chamado Lion School, foi desenvolvido para simular o sistema de uma escola, aplicando meus conhecimentos em front-end. Utilizei HTML, CSS e JavaScript para criar uma interface interativa, exibindo informações sobre alunos, cursos e desempenho acadêmico.",
+      siteLink: "https://lion-school-fawn.vercel.app/",
+      githubLink: "https://github.com/Thiago1223/lion-school",
+      category: "Vanilla"
+    },
+    {
+      image: FourthProject,
+      description: "Este projeto foi inspirado na hamburgueria Le pinguê, onde desenvolvi uma interface interativa para exibir o cardápio, promoções e informações do estabelecimento. Utilizei HTML, CSS e JavaScript para criar uma experiência visual atraente e responsiva.",
+      siteLink: "https://fernandoleonid.github.io/one-page-2022/ds1t-b/thiagoFreitas/",
+      githubLink: "https://github.com/Thiago1223/one-page-2022",
+      category: "Vanilla"
+    },
+    {
+      image: FifthProject,
+      description: "Esta landing page foi criada para homenagear o universo de Naruto, destacando personagens, vilas e arcos da história. Utilizei HTML, CSS e JavaScript para desenvolver uma interface dinâmica e envolvente, integrando uma API pública para exibir informações detalhadas sobre os personagens da série.",
+      siteLink: "https://naruto-api-two.vercel.app/",
+      githubLink: "https://github.com/Thiago1223/naruto-api",
+      category: "Vanilla"
+    },
+    {
+      image: SixthProject,
+      description: "Esta landing page foi criada para destacar o Pikachu, um dos Pokémon mais icônicos. Utilizei HTML, CSS e JavaScript para desenvolver uma interface interativa e responsiva, integrando uma API pública para exibir informações detalhadas sobre o personagem e suas habilidades.",
+      siteLink: "https://thiago1223.github.io/landing-page-pikachu/",
+      githubLink: "https://github.com/Thiago1223/landing-page-pikachu",
+      category: "Vanilla"
+    },
+    {
+      image: SeventhProject,
+      description: "Esta landing page foi desenvolvida para apresentar a motocicleta E-Bike, destacando seu design inovador, desempenho e sustentabilidade. Utilizei HTML, CSS e JavaScript para criar uma interface moderna e responsiva, proporcionando uma experiência visual imersiva e informativa para os usuários.",
+      siteLink: "https://thiago1223.github.io/Projeto-motocicleta/",
+      githubLink: "https://github.com/Thiago1223/Projeto-motocicleta",
+      category: "Vanilla"
+    },
+    {
+      image: EighthProject,
+      description: "Esta landing page foi criada para apresentar o headphone Razer Kraken BT, destacando seu design, qualidade de som e conforto. Utilizei HTML, CSS e JavaScript para desenvolver uma interface moderna e responsiva, proporcionando uma experiência imersiva com detalhes sobre suas especificações e benefícios.",
+      siteLink: "https://thiago1223.github.io/headphone-purple/",
+      githubLink: "https://github.com/Thiago1223/headphone-purple",
+      category: "Vanilla"
+    },
+    {
+      image: NinthProject,
+      description: "Este projeto acadêmico foi desenvolvido para criar um formulário dinâmico que utiliza a API do ViaCEP para facilitar o preenchimento de endereços. Com HTML, CSS e JavaScript, a interface permite que o usuário insira um CEP e obtenha automaticamente as informações.",
+      siteLink: "https://thiago1223.github.io/formulario/",
+      githubLink: "https://github.com/Thiago1223/formulario",
+      category: "Vanilla"
+    },
+    {
+      image: TenthProject,
+      description: "Este projeto foi desenvolvido como um clone do WhatsApp, onde é possível visualizar conversas. Utilizei HTML, CSS e JavaScript para criar uma interface semelhante ao aplicativo original, proporcionando uma experiência interativa e responsiva para a navegação entre os chats.",
+      siteLink: "https://fernandoleonid.github.io/whatsApp-senai-1-2023/ds2t/thiago_freitas_vilari%C3%A7o/",
+      githubLink: "https://github.com/Thiago1223/whatsApp-senai-1-2023",
+      category: "Vanilla"
+    },
+    {
+      image: EleventhProject,
+      description: "Este projeto foi desenvolvido como um aplicativo de agência de viagens utilizando Kotlin. O app possui telas de login, cadastro e inicial, onde os usuários podem visualizar pacotes de viagem. Os dados são consumidos de um banco de dados local, oferecendo uma navegação eficiente.",
+      siteLink: "https://thiago1223.github.io/headphone-purple/",
+      githubLink: "https://github.com/Thiago1223/headphone-purple",
       category: "Mobile"
     },
     {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
+      image: TwelfthProject,
+      description: "Este projeto foi desenvolvido para o setor de mecânica de usinagem do Senai, onde o professor pode gerenciar turmas, notas e matérias. É possível criar turmas, adicionar tarefas e visualizar os detalhes. O sistema foi feito com HTML, CSS e JavaScript, oferecendo uma gestão eficiente.",
+      siteLink: "https://front-mecanica-novo.vercel.app/",
+      githubLink: "https://github.com/Thiago1223/front-mecanica-novo",
       category: "Vanilla"
     },
     {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
-      category: "Vanilla"
+      image: ThirteenthProject,
+      description: "Este projeto foi desenvolvido como um aplicativo em Kotlin para simular uma escola. O app permite cadastrar alunos, visualizar cursos e notas, além de criar e gerenciar matérias. Utilizei Kotlin e um banco de dados local para garantir uma navegação ágil e eficiente.",
+      siteLink: "https://github.com/Thiago1223/Lion-School-Kotlin",
+      githubLink: "https://github.com/Thiago1223/Lion-School-Kotlin",
+      category: "Mobile"
     },
     {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
+      image: FourteenthProject,
+      description: "Este projeto é uma página de visualização de produtos, onde o usuário pode adicionar itens ao carrinho. Utilizei uma API de produtos para exibir os itens e implementando as funcionalidades com TypeScript e React, proporcionando uma experiência interativa e dinâmica.",
+      siteLink: "https://projeto-mks-ten.vercel.app/",
+      githubLink: "https://github.com/Thiago1223/projeto-mks",
       category: "React"
     },
     {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
-      category: "React"
-    },
-    {
-      image: FirstProject,
-      description: "Este é um projeto realizado com o intuito de praticar minhas habilidades ao redor do front end e na capacidade de criar landing pages com base nos conhecimentos adquiridos de Html e Css no curso de desenvolvimento de sistemas pelo Senai.",
-      siteLink: "#",
-      githubLink: "#",
+      image: FifteenthProject,
+      description: "Este projeto foi meu TCC, um e-commerce para venda, troca e doações de livros. Durante seis meses, criamos o banco de dados e desenvolvemos as versões mobile em Kotlin e desktop em React, proporcionando uma plataforma funcional e responsiva.",
+      siteLink: "https://github.com/DevelopersVision/FrontEnd-Web_Sbook",
+      githubLink: "https://github.com/DevelopersVision/FrontEnd-Web_Sbook",
       category: "React"
     }
   ];
