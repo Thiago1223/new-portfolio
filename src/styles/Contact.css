@@ -1,5 +1,5 @@
 .contact {
-    height: 98vh;
+    min-height: 98vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,7 +21,7 @@
 }
 
 .card-contact {
-    width: 20vw;
+    width: 360px;
     height: 100%;
     border: solid 4px var(--secondary-color);
     border-radius: 1rem;
@@ -89,8 +89,7 @@
 }
 
 .container-contact-input button {
-    width: 11vw;
-    height: 6vh;
+    padding: 16px 64px;
     border-radius: 2rem;
     border: none;
     cursor: pointer;
@@ -136,5 +135,55 @@ footer {
     }
     50% {
       transform: translateY(10px) rotate(180deg);
+    }
+}
+
+/* TABLET */
+@media (max-width:1000px){
+    .container-contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-subtitle {
+        width: auto;
+    }
+
+    .card-contact {
+        height: 460px;
+        margin-top: 64px;
+    }
+
+    .container-contact-input {
+        width: 100%;
+    }
+
+    .container-contact-input-initial input {
+        width: 100%;
+    }
+}
+
+/* MOBILE */
+@media (max-width:640px){
+    .container-contact {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-subtitle {
+        width: auto;
+    }
+
+    .card-contact {
+        height: 460px;
+        margin-top: 64px;
+    }
+
+    .container-contact-input {
+        width: 100%;
+    }
+
+    .container-contact-input-initial input {
+        width: 100%;
     }
 }

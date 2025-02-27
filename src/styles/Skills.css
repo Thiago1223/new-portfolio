@@ -79,8 +79,7 @@ progress::-webkit-progress-value {
 }
 
 .button-see-more {
-    width: 8vw;
-    height: 3vw;
+    padding: 16px 36px;
     background: none;
     border: var(--secondary-color) solid 2px;
     border-radius: 8px;

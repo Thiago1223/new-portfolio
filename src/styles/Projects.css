@@ -100,8 +100,7 @@
 }
 
 .card .container-button button {
-    width: 6vw;
-    height: 5vh;
+    padding: 12px 24px;
     border-radius: .5rem;
     font-size: 1rem;
     background: none;
@@ -133,4 +132,54 @@
     position: absolute;
     right: 64px;
     bottom: 64px;
+}
+
+/* TABLET */
+@media (max-width:1000px){
+    .container-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .left-up-decoration {
+        width: 64px;
+        right: 32px;
+        top: 32px;
+    }
+    
+    .right-up-decoration {
+        width: 64px;
+        right: 32px;
+        top: 32px;
+    }
+
+    .right-down-decoration {
+        width: 64px;
+    }
+}
+
+/* MOBILE */
+@media (max-width:640px){
+    .container-card {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .left-up-decoration {
+        width: 64px;
+        right: 32px;
+        top: 32px;
+    }
+    
+    .right-up-decoration {
+        width: 64px;
+        right: 32px;
+        top: 32px;
+    }
+
+    .right-down-decoration {
+        width: 64px;
+    }
 }

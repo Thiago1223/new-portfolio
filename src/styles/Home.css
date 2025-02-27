@@ -137,3 +137,45 @@
     transform: translateY(-10px);
   }
 }
+
+/* TABLET */
+@media (max-width:1000px){
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logo::before {
+    content: "< ";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .logo::after {
+    content: " />";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+}
+
+/* MOBILE */
+@media (max-width:640px){
+  .logo {
+    font-size: 1rem;
+  }
+
+  .logo::before {
+    content: "< ";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+  
+  .logo::after {
+    content: " />";
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--primary-color);
+  }
+}
