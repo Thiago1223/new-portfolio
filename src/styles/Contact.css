@@ -21,7 +21,7 @@
 }
 
 .card-contact {
-    width: 360px;
+    width: min(360px, 90vw);
     height: 540px;
     border: solid 4px var(--secondary-color);
     border-radius: 1rem;
@@ -180,9 +180,14 @@ footer {
 
 /* MOBILE */
 @media (max-width:640px){
+    .contact {
+        padding: 2rem 1.25rem;
+    }
+
     .container-contact {
         display: flex;
         flex-direction: column;
+        gap: 2rem;
     }
 
     .contact-subtitle {
@@ -190,15 +195,32 @@ footer {
     }
 
     .card-contact {
-        height: 460px;
-        margin-top: 64px;
+        height: auto;
+        min-height: 340px;
+        padding: 2rem 0;
+        margin-top: 32px;
     }
 
     .container-contact-input {
         width: 100%;
     }
 
+    .container-contact-input-initial {
+        grid-template-columns: 1fr;
+    }
+
     .container-contact-input-initial input {
         width: 100%;
+    }
+
+    .second-contact-input {
+        height: 18vh;
+        min-height: 120px;
+    }
+
+    footer {
+        padding: 2rem 1rem;
+        font-size: .85rem;
+        text-align: center;
     }
 }

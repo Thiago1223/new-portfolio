@@ -93,3 +93,53 @@ progress::-webkit-progress-value {
     background: var(--secondary-color);
     transition: .5s;
 }
+
+/* TABLET */
+@media (max-width:1000px){
+    .skills {
+        padding: 3rem 2rem;
+    }
+
+    .container-skills {
+        padding: 2rem;
+        column-gap: 3rem;
+        row-gap: 2rem;
+    }
+
+    .container-title h3 {
+        font-size: 2rem;
+    }
+}
+
+/* MOBILE */
+@media (max-width:640px){
+    .skills {
+        padding: 2rem 1.25rem;
+    }
+
+    .container-skills {
+        padding: 1rem 0;
+        column-gap: 2rem;
+        row-gap: 1.5rem;
+        justify-content: flex-start;
+    }
+
+    .container-skills-individual {
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    .container-skills-individual progress {
+        width: 100%;
+    }
+
+    .container-title h3 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .container-title-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+}

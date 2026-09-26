@@ -9,8 +9,14 @@
 
 .app {
   width: 100%;
+  overflow-x: hidden;
   font-family: 'Ubuntu';
   background-color: var(--terciary-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 html {

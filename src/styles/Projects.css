@@ -34,7 +34,9 @@
 
 .container-filter {
     display: flex;
-    gap: 2rem;
+    gap: 1rem 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .container-filter .button-filter {
@@ -64,7 +66,7 @@
 }
 
 .card {
-    width: 280px;
+    width: min(280px, 88vw);
     height: 440px;
     border: solid 2px var(--secondary-color);
     border-radius: 1rem;
@@ -88,6 +90,13 @@
 
 .container-start img {
     padding: 0rem 1rem 0;
+}
+
+.card-no-link {
+    color: var(--quaternary-color);
+    font-size: .9rem;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .container-start p {
@@ -145,6 +154,10 @@
 
 /* TABLET */
 @media (max-width:1100px){
+    .projects {
+        padding: 3rem 2rem;
+    }
+
     .container-card {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -190,5 +203,28 @@
 
     .right-down-decoration {
         width: 64px;
+    }
+
+    .projects {
+        padding: 2rem 1.25rem;
+    }
+
+    .container-card {
+        padding: 2rem 0;
+    }
+
+    .container-title h3 {
+        font-size: 1.6rem;
+        text-align: center;
+    }
+
+    .container-title-subtitle {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .container-filter .button-filter {
+        padding: .4rem 1.2rem;
+        font-size: .9rem;
     }
 }

@@ -35,6 +35,8 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .navigation {
@@ -44,11 +46,17 @@
 .navigation ul {
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .navigation ul li:hover {
   color: var(--primary-color);
   transition: 0.5s;
+}
+
+.menu-toggle {
+  display: none;
 }
 
 .home .content {
@@ -140,6 +148,21 @@
 
 /* TABLET */
 @media (max-width:1000px){
+  .home {
+    height: auto;
+    min-height: 100vh;
+    padding: 3rem 2rem;
+    background-attachment: scroll;
+  }
+
+  .navigation {
+    font-size: 1.1rem;
+  }
+
+  .navigation ul {
+    gap: 1rem;
+  }
+
   .logo {
     font-size: 1rem;
   }
@@ -161,6 +184,89 @@
 
 /* MOBILE */
 @media (max-width:640px){
+  .home {
+    padding: 2rem 1.25rem;
+    gap: 2rem;
+    background-attachment: scroll;
+  }
+
+  .home .content h1 {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  .highlight {
+    font-size: 1.5rem;
+    white-space: normal;
+  }
+
+  .home .content .content-work {
+    flex-wrap: wrap;
+    text-align: center;
+  }
+
+  .home header {
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 20;
+  }
+
+  .menu-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--secondary-color);
+    border-radius: 2px;
+    transition: transform .3s ease, opacity .3s ease;
+  }
+
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .navigation {
+    width: 100%;
+  }
+
+  .navigation ul {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    padding: 1.5rem 0;
+    margin-top: 1rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: .8rem;
+  }
+
+  .navigation ul.nav-open {
+    display: flex;
+  }
+
+  .navigation {
+    font-size: 1rem;
+  }
+
   .logo {
     font-size: 1rem;
   }
@@ -177,5 +283,25 @@
     font-size: 1rem;
     font-weight: bold;
     color: var(--primary-color);
+  }
+}
+
+/* CELULARES PEQUENOS */
+@media (max-width:380px){
+  .navigation ul {
+    font-size: .85rem;
+    gap: .6rem;
+  }
+
+  .home .content .content-welcome {
+    font-size: 1.1rem;
+  }
+
+  .home .content h1 {
+    font-size: 1.2rem;
+  }
+
+  .highlight {
+    font-size: 1.3rem;
   }
 }
