@@ -86,3 +86,55 @@ O projeto abrirá automaticamente em [http://localhost:3000](http://localhost:30
 | `npm run eject` | Expõe as configurações internas do Create React App (irreversível)|
 
 ## 📁 Estrutura de pastas
+
+new-portfolio/
+├── public/ # Arquivos estáticos (favicon, manifest, index.html)
+├── src/
+│ ├── assets/ # Imagens, ícones, PDF do currículo
+│ ├── components/ # Componentes reutilizáveis
+│ │ ├── Card.jsx # Card de projeto (imagem, descrição, links)
+│ │ ├── ContactForm.jsx # Formulário de contato (integração Formspree)
+│ │ └── Modal.jsx # Modal de feedback (sucesso/erro no envio)
+│ ├── data/ # Dados do site, separados da UI (fonte única de verdade)
+│ │ ├── profile.js # Nome, contato, redes sociais
+│ │ ├── skills.js # Lista de habilidades e nível de cada uma
+│ │ ├── projects.js # Lista de projetos (imagem, descrição, links, categoria)
+│ │ └── experience.js # Experiências profissionais
+│ ├── hooks/ # Hooks customizados reutilizáveis
+│ │ ├── useTypingEffect.js # Efeito de digitação do hero
+│ │ └── useInView.js # Detecção de scroll (IntersectionObserver)
+│ ├── sections/ # Cada seção da página como um componente
+│ │ ├── Home.jsx
+│ │ ├── AboutMe.jsx
+│ │ ├── Experience.jsx
+│ │ ├── Skills.jsx
+│ │ ├── Projects.jsx
+│ │ └── Contact.jsx
+│ ├── styles/ # Um arquivo CSS por seção/componente
+│ ├── App.jsx # Composição das seções
+│ └── index.js # Ponto de entrada da aplicação
+├── package.json
+└── README.md
+
+
+## 📱 Responsividade
+
+O layout foi construído com breakpoints para três faixas principais:
+
+- **Desktop** (padrão)
+- **Tablet** (`max-width: 1000px` / `1100px` conforme a seção)
+- **Mobile** (`max-width: 640px`, com ajustes extras em `max-width: 380px`)
+
+Em telas de celular, o menu de navegação é substituído por um **menu hambúrguer** (3 barras que se transformam em X ao abrir).
+
+## 👤 Autor
+
+**Thiago Freitas Vilariço**
+
+- [LinkedIn](https://www.linkedin.com/in/thiagofv/)
+- [GitHub](https://github.com/Thiago1223)
+- [Instagram](https://www.instagram.com/thiagofreitas_07/)
+
+---
+
+Feito por Thiago Freitas.
